@@ -192,6 +192,7 @@ function tampilkanInput() {
             if (inputValue !== null) {
 				var openUrl = "https://api.whatsapp.com/send?phone=62" + inputValue + "&text=" + formatTextForWhatsAppAPI(myText);
 				console.log(openUrl);
+				window.open(openUrl)
                // alert("Anda memasukkan: " + inputValue);
             } else {
                 //alert("Anda membatalkan input.");
