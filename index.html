@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Form</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container" >
+<h2 align="center"> Rekap Data Profit </h2>
+
+   
+  
+  <div id="inputContainer">
+  
+  <button onclick="decrement()">-</button>Profit : <span id="count-display">0</span> %
+    <button onclick="increment()">+</button>
+
+  <div class="input-group">
+    <input type="date" class="date-input" required>
+    <input type="text" class="text-input" placeholder="ketik angka saja" required pattern="[0-9]*">
+  </div>
+
+  <div id="btnAddOk">
+    <button class="btn" id="addButton">Tambah</button>
+    <button class="btn btn-secondary" id="processButton">Oke</button>
+  </div>
+
+  <br><br>
+  <div class="container" id="resultContainer">
+    <label id="resultLabel" class="result-label"></label>
+  </div>
+  
+   <div class="" id="sendwaContainer">
+	<button class="btn btn-secondary" id="sendwa">Kirim ke Whatsapp</button>
+  </div>
+ </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+ <script>
+        let nPersen = 6; // Inisialisasi nilai awal
+
+        function increment() {
+            nPersen++;
+            updateDisplay();
+        }
+
+        function decrement() {
+            nPersen--;
+			if(nPersen <= 0) nPersen = 0;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("count-display").textContent = nPersen;
+        }
+		updateDisplay();
+    </script>
