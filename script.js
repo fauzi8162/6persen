@@ -4,9 +4,11 @@ const inputContainer = document.getElementById('inputContainer');
 const btnContainer = document.getElementById('btnAddOk');
 const resultContainer = document.getElementById('resultContainer');
 const sendWaContainer = document.getElementById('sendwaContainer');
+const btnSendWa = document.getElementById('sendwa');
 const resultLabel = document.getElementById('resultLabel');
-
-	sendWaContainer.style.display = 'none'; // sembunyikan sendWaContainer
+btnSendWa.disabled = true;
+btnSendWa.style.backgroundColor = "gray";
+sendWaContainer.style.display = 'none'; // sembunyikan sendWaContainer
 var arrDate = [];
 var arrNominal = [];
 
