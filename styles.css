@@ -53,3 +53,8 @@ body {
   display: none;
   cursor: pointer;
 }
+
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
