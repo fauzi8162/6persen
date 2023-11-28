@@ -28,6 +28,7 @@
   </div>
 
   <br><br>
+	  <button onclick="refreshPage()" id="btnRefresh" class="btn btn-refresh full-width">Refresh / Hitung Ulang</button>
   <div class="container" id="resultContainer">
     <label id="resultLabel" class="result-label"></label>
   </div>
@@ -45,7 +46,8 @@
 
  <script>
         let nPersen = 6; // Inisialisasi nilai awal
-
+	const btnRefresh = document.getElementById('btnRefresh');
+	btnRefresh.style.display = 'none'; // sembunyikan
         function increment() {
             nPersen++;
             updateDisplay();
@@ -68,7 +70,16 @@
 		// Menonaktifkan elemen-elemen
 		elementsToDisable.forEach(element => {
 			element.disabled = true;
+			// Tambahan: Mengubah warna tombol menjadi abu-abu
+			if (element.tagName.toLowerCase() === 'button') {
+				element.style.backgroundColor = '#D3D3D3'; // Ganti dengan kode warna abu-abu yang sesuai
+			}
 		});
+
+		//aktifkan tombol refresh
+		btnRefresh.style.backgroundColor = ''; // sembunyikan
+		btnRefresh.style.display = 'block'; // sembunyikan
+		btnRefresh.disabled = false;
 	}
 
 	// Menangani klik tombol "Oke"
@@ -76,6 +87,10 @@
 		disableElements();
 		// Tambahan: Anda dapat menambahkan logika lain di sini sesuai kebutuhan.
 	});
+
+	function refreshPage() {
+            location.reload(true); // Merefresh halaman
+        }
 
 	updateDisplay();
     </script>
