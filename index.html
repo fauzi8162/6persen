@@ -60,5 +60,22 @@
         function updateDisplay() {
             document.getElementById("count-display").textContent = nPersen;
         }
-		updateDisplay();
+	 
+	function disableElements() {
+		// Mendapatkan referensi ke elemen-elemen yang perlu dinonaktifkan
+		let elementsToDisable = document.querySelectorAll('#count-display, button, .date-input, .text-input, #addButton, #processButton');
+
+		// Menonaktifkan elemen-elemen
+		elementsToDisable.forEach(element => {
+			element.disabled = true;
+		});
+	}
+
+	// Menangani klik tombol "Oke"
+	document.getElementById("processButton").addEventListener("click", function () {
+		disableElements();
+		// Tambahan: Anda dapat menambahkan logika lain di sini sesuai kebutuhan.
+	});
+
+	updateDisplay();
     </script>
