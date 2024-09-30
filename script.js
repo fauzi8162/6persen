@@ -56,7 +56,7 @@ addButton.addEventListener('click', () => {
 
 processButton.addEventListener('click', () => {
 	btnCopy.disabled = false;
-btnSendWa.style.backgroundColor = "green";
+btnCopy.style.backgroundColor = "green";
   const dateInputs = document.querySelectorAll('.date-input');
   const textInputs = document.querySelectorAll('.text-input');
 
