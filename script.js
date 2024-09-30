@@ -7,6 +7,7 @@ const btnCopy = document.getElementById('btnCopy');
 const sendWaContainer = document.getElementById('sendwaContainer');
 const btnSendWa = document.getElementById('sendwa');
 const resultLabel = document.getElementById('resultLabel');
+btnCopy.disabled = false;
 btnSendWa.disabled = true;
 btnSendWa.style.backgroundColor = "gray";
 sendWaContainer.style.display = 'none'; // sembunyikan sendWaContainer
