@@ -3,6 +3,7 @@ const processButton = document.getElementById('processButton');
 const inputContainer = document.getElementById('inputContainer');
 const btnContainer = document.getElementById('btnAddOk');
 const resultContainer = document.getElementById('resultContainer');
+const btnCopy = document.getElementById('btnCopy');
 const sendWaContainer = document.getElementById('sendwaContainer');
 const btnSendWa = document.getElementById('sendwa');
 const resultLabel = document.getElementById('resultLabel');
@@ -130,6 +131,7 @@ function prosesText(date, nominal){
 	resultLabel.innerHTML  = myText;
 	resultContainer.style.display = 'block'; // Menampilkan resultContainer
 	sendWaContainer.style.display = 'block'; // Menampilkan sendWaContainer
+	btnCopy.style.display = 'block'; 
 }
 
 /* resultContainer.addEventListener('click', () => {
@@ -185,7 +187,7 @@ function prosesText(date, nominal){
 
 //resultContainer.addEventListener("click", copyTextWithNewlines);
 resultContainer.addEventListener("click", copyTextWithLineBreaks);
-
+btnCopy.addEventListener("click", copyTextWithLineBreaks);
 
 
 function tampilkanInput() {
