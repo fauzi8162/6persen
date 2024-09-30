@@ -7,7 +7,6 @@ const btnCopy = document.getElementById('btnCopy');
 const sendWaContainer = document.getElementById('sendwaContainer');
 const btnSendWa = document.getElementById('sendwa');
 const resultLabel = document.getElementById('resultLabel');
-btnCopy.disabled = false;
 btnSendWa.disabled = true;
 btnSendWa.style.backgroundColor = "gray";
 sendWaContainer.style.display = 'none'; // sembunyikan sendWaContainer
@@ -56,6 +55,8 @@ addButton.addEventListener('click', () => {
 });
 
 processButton.addEventListener('click', () => {
+	btnCopy.disabled = false;
+btnSendWa.style.backgroundColor = "green";
   const dateInputs = document.querySelectorAll('.date-input');
   const textInputs = document.querySelectorAll('.text-input');
 
@@ -203,7 +204,7 @@ function tampilkanInput() {
                 //alert("Anda membatalkan input.");
             }
         }
-sendWaContainer.addEventListener("click", tampilkanInput);
+//sendWaContainer.addEventListener("click", tampilkanInput);
 
 
 function formatTextForWhatsAppAPI(text) {
