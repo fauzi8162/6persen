@@ -58,3 +58,78 @@ body {
     width: 100%;
     box-sizing: border-box;
 }
+
+
+ /* Tambahkan gaya untuk menu icon dan popup */
+    .menu-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1001;
+    }
+
+    .popup .popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .popup .popup-header h3 {
+        margin: 0;
+    }
+
+    .popup .popup-header .close-btn {
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+
+    .popup-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .popup-buttons a {
+        text-decoration: none;
+        text-align: center;
+        padding: 10px;
+        background-color: #007BFF;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .popup-buttons a:hover {
+        background-color: #0056b3;
+    }
+
+    /* Overlay untuk latar belakang popup */
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }

@@ -38,6 +38,25 @@
 	   <button class="btn btn-secondary" id="btnCopy">Copy</button>
   </div>
  </div>
+ 
+ <!-- Ikon menu -->
+<div class="menu-icon" onclick="togglePopup()">☰</div>
+</div>
+
+
+
+<!-- Popup dan overlay -->
+<div class="popup-overlay" onclick="closePopup()"></div>
+<div class="popup">
+    <div class="popup-header">
+        <h3>Menu</h3>
+        <button class="close-btn" onclick="closePopup()">×</button>
+    </div>
+    <div class="popup-buttons">
+        <a href="/menu1/index.html">Ceklis Barang Kosong</a>
+        <a href="#">Menu 2</a>
+        <a href="#">Menu 3</a>
+    </div>
 </div>
 
 <script src="script.js"></script>
@@ -46,6 +65,16 @@
 
 
  <script>
+ function togglePopup() {
+        document.querySelector('.popup').style.display = 'block';
+        document.querySelector('.popup-overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.querySelector('.popup').style.display = 'none';
+        document.querySelector('.popup-overlay').style.display = 'none';
+    }
+	
         let nPersen = 6; // Inisialisasi nilai awal
 	const btnRefresh = document.getElementById('btnRefresh');
 	btnRefresh.style.display = 'none'; // sembunyikan
@@ -81,6 +110,11 @@
 		btnRefresh.style.backgroundColor = ''; // sembunyikan
 		btnRefresh.style.display = 'block'; // sembunyikan
 		btnRefresh.disabled = false;
+		
+		//aktifkan tombol copy
+		btnCopy.style.backgroundColor = ''; // sembunyikan
+		btnCopy.style.display = 'block'; // sembunyikan
+		btnCopy.disabled = false;
 	}
 
 	// Menangani klik tombol "Oke"
