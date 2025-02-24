@@ -1,3 +1,4 @@
+console.log("24-02-2025")
 const addButton = document.getElementById('addButton');
 const processButton = document.getElementById('processButton');
 const inputContainer = document.getElementById('inputContainer');
