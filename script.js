@@ -221,3 +221,68 @@ function formatAngka(number) {
   return number.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
+
+/////===move
+ function togglePopup() {
+        document.querySelector('.popup').style.display = 'block';
+        document.querySelector('.popup-overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.querySelector('.popup').style.display = 'none';
+        document.querySelector('.popup-overlay').style.display = 'none';
+    }
+	
+        let nPersen = 6; // Inisialisasi nilai awal
+	const btnRefresh = document.getElementById('btnRefresh');
+	btnRefresh.style.display = 'none'; // sembunyikan
+        function increment() {
+            nPersen++;
+            updateDisplay();
+        }
+
+        function decrement() {
+            nPersen--;
+			if(nPersen <= 0) nPersen = 0;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("count-display").textContent = nPersen;
+        }
+	 
+	function disableElements() {
+		// Mendapatkan referensi ke elemen-elemen yang perlu dinonaktifkan
+		let elementsToDisable = document.querySelectorAll('#count-display, button, .date-input, .text-input, #addButton, #processButton');
+
+		// Menonaktifkan elemen-elemen
+		elementsToDisable.forEach(element => {
+			element.disabled = true;
+			// Tambahan: Mengubah warna tombol menjadi abu-abu
+			if (element.tagName.toLowerCase() === 'button') {
+				element.style.backgroundColor = '#D3D3D3'; // Ganti dengan kode warna abu-abu yang sesuai
+			}
+		});
+
+		//aktifkan tombol refresh
+		btnRefresh.style.backgroundColor = ''; // sembunyikan
+		btnRefresh.style.display = 'block'; // sembunyikan
+		btnRefresh.disabled = false;
+		
+		//aktifkan tombol copy
+		btnCopy.style.backgroundColor = ''; // sembunyikan
+		btnCopy.style.display = 'block'; // sembunyikan
+		btnCopy.disabled = false;
+	}
+
+	// Menangani klik tombol "Oke"
+	document.getElementById("processButton").addEventListener("click", function () {
+		disableElements();
+		// Tambahan: Anda dapat menambahkan logika lain di sini sesuai kebutuhan.
+	});
+
+	function refreshPage() {
+            location.reload(true); // Merefresh halaman
+        }
+
+	updateDisplay();
