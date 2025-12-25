@@ -238,12 +238,12 @@ function formatAngka(number) {
 	const btnRefresh = document.getElementById('btnRefresh');
 	btnRefresh.style.display = 'none'; // sembunyikan
         function increment() {
-            nPersen+0.5;
+            nPersen+=0.5;
             updateDisplay();
         }
 
         function decrement() {
-            nPersen-0.5;
+            nPersen-=0.5;
 			if(nPersen <= 0) nPersen = 0;
             updateDisplay();
         }
@@ -287,4 +287,5 @@ function formatAngka(number) {
         }
 
 	updateDisplay();
+
 
