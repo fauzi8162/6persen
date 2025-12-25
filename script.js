@@ -235,7 +235,7 @@ function formatAngka(number) {
         document.querySelector('.popup-overlay').style.display = 'none';
     }
 	
-        let nPersen = 6; // Inisialisasi nilai awal
+        let nPersen = 1.5; // Inisialisasi nilai awal
 	const btnRefresh = document.getElementById('btnRefresh');
 	btnRefresh.style.display = 'none'; // sembunyikan
         function increment() {
@@ -288,6 +288,7 @@ function formatAngka(number) {
         }
 
 	updateDisplay();
+
 
 
 
